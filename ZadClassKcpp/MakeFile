@@ -1,0 +1,23 @@
+CXX = g++
+CXXFLAGS = -Wall -Wextra -std=c++17 -Iinclude
+
+TARGET = program
+
+SRC = $(wildcard src/*.cc) main.cc
+OBJ = $(SRC:.cc=.o)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJ)
+
+%.o: %.cc
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -f src/*.o main.o $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)
+
+.PHONY: all clean run
