@@ -3,31 +3,29 @@
 
 using namespace std;
 
+#include "ZadClass.h"
+
 class Student {
 public:
-    string imie;     
-
+    string imie;
 
     void przedstawSie() {
         cout << "Mam na imie: " << imie << endl;
     }
 
-    
     inline int pobierzWiek() {
         return wiek;
     }
 
-    
     void ustawDane(string i, int w, double s);
     void wyswietlDane();
 
 private:
-    int wiek;         
+    int wiek;
 
 protected:
-    double srednia;   
+    double srednia;
 };
-
 
 void Student::ustawDane(string i, int w, double s) {
     imie = i;
@@ -35,24 +33,21 @@ void Student::ustawDane(string i, int w, double s) {
     srednia = s;
 }
 
-
 void Student::wyswietlDane() {
     cout << "Imie: " << imie << endl;
-    cout << "Wiek: " << wiek << endl;        
-    cout << "Srednia: " << srednia << endl;  
+    cout << "Wiek: " << wiek << endl;
+    cout << "Srednia: " << srednia << endl;
 }
 
-int main() {
+void ZadClass::uruchom() {
+
     Student s;
 
     s.ustawDane("Jan", 20, 4.5);
 
     s.przedstawSie();
 
-    cout << "Wiek: "
-         << s.pobierzWiek() << endl;
+    cout << "Wiek: " << s.pobierzWiek() << endl;
 
     s.wyswietlDane();
-
-    return 0;
 }

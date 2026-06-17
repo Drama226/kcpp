@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <iostream>
 
 using namespace std;
@@ -29,36 +28,4 @@ int main()
          << sumaSilni << endl;
 
     return 0;
-=======
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-    int liczba;
-    long long silnia = 1;
-    long long sumaSilni = 0;
-
-    cout << "Podaj liczbe do obliczenia silni: ";
-    cin >> liczba;
-
-    if (liczba < 0)
-    {
-        cout << "Blad: silnia jest zdefiniowana tylko dla liczb nieujemnych." << endl;
-        return 1;
-    }
-
-    for (int i = 1; i <= liczba; i++)
-    {
-        silnia *= i;
-        sumaSilni += silnia;
-    }
-
-    cout << "Silnia z " << liczba << " wynosi: " << silnia << endl;
-    cout << "Suma silni od 1! do " << liczba << "! wynosi: "
-         << sumaSilni << endl;
-
-    return 0;
->>>>>>> b9a64a71f9f8d086e0227ce74564a32a4c14bb71
 }
